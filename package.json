@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "connect": "psql -h localhost -U user -d songs -p 5432"
   },
   "repository": {
     "type": "git",
@@ -18,14 +19,22 @@
   },
   "homepage": "https://github.com/derekngo/atticus-test#readme",
   "dependencies": {
+    "knex": "^0.95.11",
     "koa": "^2.13.3",
     "koa-bodyparser": "^4.3.0",
     "koa-json": "^2.0.2",
     "koa-logger": "^3.2.1",
     "koa-router": "^10.1.1",
+    "pg": "^8.7.1",
     "typescript": "^4.4.3"
   },
   "devDependencies": {
+    "@types/knex": "^0.16.1",
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.3",
+    "@types/koa-json": "^2.0.20",
+    "@types/koa-logger": "^3.1.2",
+    "@types/koa-router": "^7.4.4",
     "@types/node": "^16.10.3"
   }
 }
