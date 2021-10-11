@@ -4,12 +4,24 @@ import * as Router from "koa-router";
 import * as logger from "koa-logger";
 import * as json from "koa-json";
 
+import { getSong } from "./controller";
+
 const app = new Koa();
 const router = new Router();
 
 // Hello world
 router.get("/", async (ctx, next) => {
   ctx.body = { msg: "Hello world!" };
+
+  await next();
+});
+
+router.get("/songs/:id", async (ctx, next) => {
+  ctx.body = { msg: "Hello world 2!" };
+
+  const song = await getSong(ctx.params.id)
+
+  ctx.body = song;
 
   await next();
 });

@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "connect": "psql -h localhost -U user -d songs -p 5432"
+    "test": "jest",
+    "connect": "psql -h localhost -U user -d songs -p 5432",
+    "start": "tsc && node ."
   },
   "repository": {
     "type": "git",
@@ -26,15 +27,20 @@
     "koa-logger": "^3.2.1",
     "koa-router": "^10.1.1",
     "pg": "^8.7.1",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/jest": "^27.0.2",
     "@types/knex": "^0.16.1",
     "@types/koa": "^2.13.4",
     "@types/koa-bodyparser": "^4.3.3",
     "@types/koa-json": "^2.0.20",
     "@types/koa-logger": "^3.1.2",
     "@types/koa-router": "^7.4.4",
-    "@types/node": "^16.10.3"
+    "@types/node": "^16.10.3",
+    "@types/uuid": "^8.3.1",
+    "jest": "^27.2.5",
+    "ts-jest": "^27.0.5"
   }
 }
