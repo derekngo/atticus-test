@@ -6,3 +6,11 @@ export async function getSong(id: string): Promise<Song> {
 
   return songs[0];
 }
+
+export async function createSong(song: Song): Promise<Song> {
+  const records = await pg_knex('songs').insert(song)
+
+  console.log(records)
+
+  return song
+}
