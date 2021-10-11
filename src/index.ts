@@ -5,7 +5,7 @@ import * as logger from "koa-logger";
 import * as json from "koa-json";
 import * as bodyParser from 'koa-bodyparser';
 
-import { createSong, getSong } from "./controller";
+import { createSong, getSong, updateSong } from "./controller";
 
 const app = new Koa();
 const router = new Router();
@@ -32,6 +32,17 @@ router.post("/songs", async (ctx, next) => {
   const result = await createSong(ctx.request.body)
 
   ctx.body = ctx.request.body;
+
+  await next();
+});
+
+router.put("/songs/:id", async (ctx, next) => {
+  console.log(ctx.params.id);
+  console.log(ctx.request.body);
+
+  const result = await updateSong(ctx.params.id, ctx.request.body)
+
+  ctx.body = result;
 
   await next();
 });

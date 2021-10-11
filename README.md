@@ -10,3 +10,11 @@ $ tsc
 # DB
 $ npx knex migrate:make setup
 $ npx knex migrate:latest
+
+
+# TODO
+- properly type uuid
+- add updatedAt and createdAt for rows
+
+# Roadmap
+- better client error messages
