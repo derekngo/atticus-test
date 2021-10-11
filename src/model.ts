@@ -17,3 +17,5 @@ export default class Song {
   song: string
   ranking: number
 }
+
+export type UUID = string;
